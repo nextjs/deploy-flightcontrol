@@ -1,0 +1,31 @@
+{
+  "$schema": "https://app.flightcontrol.dev/schema.json",
+  "environments": [
+    {
+      "id": "production",
+      "name": "Production",
+      "region": "us-west-2",
+      "source": {
+        "branch": "main"
+      },
+      "services": [
+        {
+          "id": "nextjs",
+          "name": "Next.js",
+          "type": "web",
+          "target": { "type": "fargate" },
+          "buildType": "nixpacks",
+          "ci": {
+            "type": "ec2"
+          },
+          "cpu": 0.25,
+          "memory": 0.5,
+          "minInstances": 1,
+          "maxInstances": 1,
+          "buildCommand": "npm run build",
+          "startCommand": "npm run start"
+        }
+      ]
+    }
+  ]
+}
