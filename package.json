@@ -3,7 +3,7 @@
   "scripts": {
     "dev": "next dev --turbo",
     "build": "next build",
-    "start": "node .next/standalone/server.js"
+    "start": "next start"
   },
   "dependencies": {
     "react": "19.0.0-rc-69d4b800-20241021",
